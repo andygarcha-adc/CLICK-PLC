@@ -1,0 +1,1 @@
+This example project uses the TCP in node to recieve a message from the CLICK Send command.  Based on the data type sent in the "StartingSlave Address" field, it parses the raw Modbus message into an array of values.
