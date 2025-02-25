@@ -1,10 +1,10 @@
 # CLICK PLC Modbus message to Node-RED (Modbus Parser)
 This example project uses the TCP in node to recieve a message from the CLICK Send command.  Based on the data type sent in the "StartingSlave Address" field, it parses the raw Modbus message into an array of values.
 This ladder example shows several "Send" commands which each send a range of address values to the TCP In node in a Node-RED flow.
-<img src="https://github.com/AutomationDirect/CLICK-PLC/blob/main/Node-RED/Node-RED%20Modbus%20Parser/ModbusLadder.png">
+<img src="ModbusLadder.png">
 
 To Configure the Send Command in CLICK follow these steps:
-<img src="https://github.com/AutomationDirect/CLICK-PLC/blob/main/Node-RED/Node-RED%20Modbus%20Parser/Send%20config.png">
+<img src="Send%20config.png">
 1. Enter the Node-RED server's IP address
 2. Enter a Port number that the Node-RED server will listed to (make sure to open the port)
 3. Ignore slave ID, it isn't used in this example
