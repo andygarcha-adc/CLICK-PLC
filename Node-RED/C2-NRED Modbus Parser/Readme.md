@@ -21,7 +21,7 @@ To Configure the Send Command in CLICK follow these steps:
 The status flags are optional but can make debuggin in CLICK easier
 
 Below is the corresponding example flow in Node-RED:
-<img src="https://github.com/AutomationDirect/CLICK-PLC/blob/main/Node-RED/Node-RED%20Modbus%20Parser/ModbusFlow.png">
+<img src="ModbusFlow.png">
 
 The TCP node is always listening for a data stream into the specified port.  This port value must match the CLICK Send port number.  There are two Javascript function blocks:
 1. Parse Modbus.  This function recieves the data stream from CLICK and converts it from Modbus back into an array of values
