@@ -1,6 +1,9 @@
 This example uses the dashboard feature of NodeRED to turn on/off internal control relays.
 <img src="CLICKControlRelayDashboard.png">
 
+Here is how your NodeRED Dashboard will look:
+<img src="CLICKControlRelayDashboard02.png">
+
 See below for the full flow:
 <pre lang=javascript>
 [
