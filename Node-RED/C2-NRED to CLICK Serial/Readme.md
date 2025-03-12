@@ -1,4 +1,4 @@
-# Use a C2-NRED and write data using the serial port on the CLICK
+# Use a C2-NRED to write ASCii or Modbus RTU using the serial port on the CLICK
 The goal of this project is to take a list of numeric values or strings in Node-RED and write them out a serial port on the CLICK CPU.
 This example project starts with a flow in Node-RED that has generated a list of data elements.  It writes them to the CLICK memory using the CLICK Write Node, it then sets a bit (C1) to indicate to the CPU that data is ready to write. 
 On the Ladder side, when the CPU sees bit 1 go high it executes a SEND command.  Whether that command succeeds or fails, when it is complete, it clears the C1 bit.
