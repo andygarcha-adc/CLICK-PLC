@@ -4,7 +4,7 @@ This example project starts with a flow in Node-RED that has generated a list of
 On the Ladder side, when the CPU sees bit 1 go high it executes a SEND command.  Whether that command succeeds or fails, when it is complete, it clears the C1 bit.
 <img src="CLICK Serial Flow.png">
 
-The Inject config Simply creates an Array of values [0,1,0] for Bits. [34, 23, 45] for integers, or ["Automation"] for a string.
+The Inject node simply sends an Array of values [0,1,0] for Bits. [34, 23, 45] for integers, or ["Automation"] for a string.
 The CLICK Write node sends that array to the designated registers in the CLICK
 The "Change" Node writes a JSON Array [1] and the lst CLICK node writes that to C1.
 
