@@ -1,1 +1,1 @@
-This utility lets you enter the name of a Node-RED third party module and it verifies the best version for th eC2-NRED Slot module, and generates a download link so you can archive the components of your project.
+This utility lets you enter the name of a Node-RED third party module and it verifies the best version for the C2-NRED Slot module, and generates a download link so you can archive the components of your project.
