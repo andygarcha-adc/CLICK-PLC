@@ -68,7 +68,8 @@
                     const downloadUrl = `https://registry.npmjs.org/${packageName}/-/${packageName}-${bestMatch}.tgz`;
                     resultDiv.innerHTML = `
                         <p style='color: green;'>✔ The best compatible version of <strong>${packageName}</strong> is <strong>v${bestMatch}</strong>, which works with Node.js 14.18.1 and Node-RED 3.0.2.</p>
-                        <p><a href="${downloadUrl}" target="_blank">Download the package (v${bestMatch})</a></p>
+                        <p>${downloadUrl}</p>
+			<p><a href="${downloadUrl}" target="_blank">Download the package (v${bestMatch})</a></p>
                     `;
                 } else {
                     resultDiv.innerHTML = `<p style='color: red;'>✘ No compatible version of <strong>${packageName}</strong> found for Node.js 14.18.1 and Node-RED 3.0.2.</p>`;
