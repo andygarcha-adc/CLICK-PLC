@@ -62,6 +62,7 @@
                     resultDiv.innerHTML = `
                         <p style='color: green;'>✔ The best compatible version of <strong>${packageName}</strong> is <strong>v${bestMatch}</strong>, which works with Node.js 14.18.1 and Node-RED 3.0.2.</p>
                         <p>${downloadUrl}</p>
+			<p>Copy the above URL into your browser or click this link to</p>
 			<p><a href="${downloadUrl}" target="_blank">Download the package (v${bestMatch})</a></p>
                     `;
                 } else {
