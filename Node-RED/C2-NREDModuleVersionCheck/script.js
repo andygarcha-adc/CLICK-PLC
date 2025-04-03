@@ -1,4 +1,3 @@
-
         async function findCompatibleVersion() {
             const packageName = document.getElementById("packageName").value.trim();
             const resultDiv = document.getElementById("result");
