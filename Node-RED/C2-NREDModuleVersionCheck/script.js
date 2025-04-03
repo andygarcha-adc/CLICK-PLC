@@ -1,4 +1,4 @@
-    <script>
+
         async function findCompatibleVersion() {
             const packageName = document.getElementById("packageName").value.trim();
             const resultDiv = document.getElementById("result");
@@ -140,4 +140,3 @@
             let minVersion = required.replace("^", "").replace("~", "").trim();
             return current.startsWith(minVersion.split(".")[0]); // Approximate match
         }
-    </script>
