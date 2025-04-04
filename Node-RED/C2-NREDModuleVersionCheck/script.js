@@ -1,7 +1,15 @@
         async function findCompatibleVersion() {
             const packageName = document.getElementById("packageName").value.trim();
             const resultDiv = document.getElementById("result");
+	    const packageInput = document.getElementById('packageName').value;
 
+	    // 🔥 Google Analytics custom event
+	    gtag('event', 'find_compatible_version_click', {
+	      'event_category': 'Package Search',
+	      'event_label': 'Package Name Entry',
+	      'value': packageInput
+	    });
+		
             if (!packageName) {
                 resultDiv.innerHTML = "<p style='color: red;'>Please enter a package name.</p>";
                 return;
