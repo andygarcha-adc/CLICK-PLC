@@ -7,7 +7,7 @@
 	    gtag('event', 'find_compatible_version_click', {
 	      'event_category': 'Package Search',
 	      'event_label': 'Compatibility Check',
-	      'package_name': packageInput,
+	      'package_name': packageName,
   	      'compatible_version': bestMatch,
 	      'highest_version': highestVersion,
 	      
