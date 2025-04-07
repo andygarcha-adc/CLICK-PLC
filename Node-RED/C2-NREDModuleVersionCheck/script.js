@@ -6,8 +6,11 @@
 	    // 🔥 Google Analytics custom event
 	    gtag('event', 'find_compatible_version_click', {
 	      'event_category': 'Package Search',
-	      'event_label': 'Package Name Entry',
-	      'value': packageInput
+	      'event_label': 'Compatibility Check',
+	      'package_name': packageInput,
+  	      'compatible_version': bestMatch,
+	      'highest_version': highestVersion,
+	      
 	    });
 		
             if (!packageName) {
@@ -27,6 +30,7 @@
 					throw new Error("Package not found.");
 				}
                 let bestMatch = null;
+		const highestVersion = allVersions[allVersions.length - 1]; // <-- this gets the highest version
 
                 for (let version of allVersions.reverse()) { // Iterate from newest to oldest
                     const packageInfo = data.versions[version];
