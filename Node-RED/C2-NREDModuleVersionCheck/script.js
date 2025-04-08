@@ -1,7 +1,22 @@
-        async function findCompatibleVersion() {
-            const packageName = document.getElementById("packageName").value.trim();
+		// Get the input field and the button
+		const packageInput = document.getElementById("packageName");
+		const viewNpmButton = document.getElementById("viewNpmButton");
+
+		// Disable 'View npm' button when user types in the input field
+		packageInput.addEventListener("input", () => {
+			viewNpmButton.disabled = true; // Disable button when input changes
+		});
+		
+		// Event listener for the 'Find Compatible Version' button click
+		async function findCompatibleVersion() {
+            document.body.classList.add('waiting'); // ⏳ Override all cursors
+			
+			const packageName = document.getElementById("packageName").value.trim();
             const resultDiv = document.getElementById("result");
-	    const packageInput = document.getElementById('packageName').value;
+			const npmPageBtn = document.getElementById("npmPageBtn");
+			//npmPageBtn.disabled = true;
+			//npmPageBtn.onclick = null;
+			//const packageInput = document.getElementById('packageName').value;
 
 	    // 🔥 Google Analytics custom event
 	    gtag('event', 'find_compatible_version_click', {
@@ -12,7 +27,7 @@
 	      'highest_version': result.highestVersion,
 	      
 	    });
-		
+
             if (!packageName) {
                 resultDiv.innerHTML = "<p style='color: red;'>Please enter a package name.</p>";
                 return;
@@ -30,7 +45,7 @@
 					throw new Error("Package not found.");
 				}
                 let bestMatch = null;
-		const highestVersion = allVersions[allVersions.length - 1]; // <-- this gets the highest version
+				const highestVersion = allVersions[allVersions.length - 1]; // <-- this gets the highest version
 
                 for (let version of allVersions.reverse()) { // Iterate from newest to oldest
                     const packageInfo = data.versions[version];
@@ -71,20 +86,26 @@
 
                 if (bestMatch) {
                     const downloadUrl = `https://registry.npmjs.org/${packageName}/-/${packageName}-${bestMatch}.tgz`;
-                    resultDiv.innerHTML = `
+                    const npmUrl = `https://www.npmjs.com/package/${packageName}/v/${bestMatch}`;
+					viewNpmButton.onclick = () => window.open(npmUrl, "_blank");
+					resultDiv.innerHTML = `
                         <p style='color: green;'>✔ The best compatible version of <strong>${packageName}</strong> is <strong>v${bestMatch}</strong>, which works with Node.js 14.18.1 and Node-RED 3.0.2.</p>
                         <h3>${downloadUrl}</h3>
-			<p>Copy the above URL into your browser or click this link to</p>
-			<p><a href="${downloadUrl}" target="_blank">Download the package (v${bestMatch})</a></p>
+						<p>Copy the above URL into your browser or click this link to</p>
+						<p><a href="${downloadUrl}" target="_blank">Download the package (v${bestMatch})</a></p>
                     `;
+					// Enable the 'View npm' button after a successful result
+					viewNpmButton.disabled = false; // Enable the button
                 } else {
                     resultDiv.innerHTML = `<p style='color: red;'>✘ No compatible version of <strong>${packageName}</strong> found for Node.js 14.18.1 and Node-RED 3.0.2.</p>`;
                 }
             } catch (error) {
                 resultDiv.innerHTML = `<p style='color: red;'>Error: ${error.message}</p>`;
-            }
+            } finally {
+					document.body.classList.remove('waiting');
+			}
         }
-
+				
 		function padArray(arr) {
 			while (arr.length < 3) {
 				arr.splice(arr.length, 0, '0');
