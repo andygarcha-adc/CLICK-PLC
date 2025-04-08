@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <title>Node-RED Package Compatibility Finder</title>
+    <title>C2-NRED Package Compatibility Finder</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,7 +26,7 @@
             margin-right: 20px;
         }
         .container {
-            max-width: 750px;
+            max-width: 1000px;
             margin: 50px auto;
             padding: 20px;
             background: white;
@@ -34,7 +34,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         input {
-            width: 80%;
+            width: 50%;
             padding: 10px;
             margin-top: 10px;
             border: 1px solid #ccc;
@@ -54,7 +54,30 @@
         button:hover {
             background-color: #0056b3;
         }
-        #result {
+        #npmPageBtn {
+			background-color: #007bff;  /* Bootstrap blue */
+			color: white;
+			border: none;
+			padding: 8px 12px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#npmPageBtn:disabled {
+			background-color: #cccccc;
+			color: #666666;
+			cursor: not-allowed;
+		}
+		button:disabled {
+			background-color: #cccccc;
+			color: #666666;
+			cursor: not-allowed;
+		}
+
+		body.waiting *,
+		body.waiting *:hover {
+			cursor: wait !important; /* 🔥 Force wait cursor even on hover */
+		}
+		#result {
             margin-top: 20px;
             font-size: 16px;
         }
@@ -68,7 +91,7 @@
 <body>
 
     <div class="header">
-        <h2 style="margin: 0; padding-left: 20px;">Node-RED Package Compatibility Finder</h2>
+        <h2 style="margin: 0; padding-left: 20px;">C2-NRED Package Compatibility Finder</h2>
         <img src="adc_logo.jpg" alt="AutomationDirect Logo" class="logo">
     </div>
 
@@ -78,11 +101,16 @@
         <label for="packageName">Package Name:</label>
         <input type="text" id="packageName" placeholder="e.g., node-red-contrib-modbus">
         <br>
-        <button onclick="findCompatibleVersion()">Find Compatible Version</button>
+        
+		<button onclick="findCompatibleVersion()">Find Compatible Version</button>
+		<button id="viewNpmButton" disabled>View on NPM</button>
 
         <div id="result"></div>
-
-        <p class="note"><strong>NOTE:</strong> This is only an aid to find the correct version. ADC does not support or warrant any third-party nodes.</p>
+		
+		<p>To find package names please visit <a href="https://npmjs.com/" target="_blank">npmjs.com</a></p>
+        <p>For more information about the C2-NRED CLICK module please visit <a href="https://www.automationdirect.com/adc/overview/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules" target="_blank">AutomationDirect.com</a></p>
+		<p>For more information about Node-RED in general please visit <a href="https://nodered.org/" target="_blank">NodeRED.org</a></p>
+		<p class="note"><strong>NOTE:</strong> This is only an aid to find the correct version. ADC does not support or warrant any third-party nodes.</p>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5JPBW1KYE"></script>
         <script>
