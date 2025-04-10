@@ -17,7 +17,7 @@
 		//npmPageBtn.disabled = true;
 		//npmPageBtn.onclick = null;
 		//const packageInput = document.getElementById('packageName').value;
-
+		
 	        if (!packageName) {
 	        	resultDiv.innerHTML = "<p style='color: red;'>Please enter a package name.</p>";
 	        	return;
@@ -77,6 +77,16 @@
 	                if (bestMatch) {
 	                	const downloadUrl = `https://registry.npmjs.org/${packageName}/-/${packageName}-${bestMatch}.tgz`;
 	                    	const npmUrl = `https://www.npmjs.com/package/${packageName}/v/${bestMatch}`;
+				
+				// 🔥 Google Analytics custom event
+				gtag('event', 'find_compatible_version_click', {
+				    	'event_category': 'Package Search',
+					'event_label': 'Compatibility Check',
+					'package_name': packageName,
+				  	'compatible_version': result.bestMatch,
+					'highest_version': result.highestVersion,	      
+			   	 });
+				
 				viewNpmButton.onclick = () => window.open(npmUrl, "_blank");
 				resultDiv.innerHTML = `
 	                        	<p style='color: green;'>✔ The best compatible version of <strong>${packageName}</strong> is <strong>v${bestMatch}</strong>, which works with Node.js 14.18.1 and Node-RED 3.0.2.</p>
@@ -95,14 +105,7 @@
 			document.body.classList.remove('waiting');
 		}
 
-		// 🔥 Google Analytics custom event
-	gtag('event', 'find_compatible_version_click', {
-	    	'event_category': 'Package Search',
-		'event_label': 'Compatibility Check',
-		'package_name': packageName,
-	  	'compatible_version': result.bestMatch,
-		'highest_version': result.highestVersion,	      
-   	 });
+	
 	}
 					
 	function padArray(arr) {
