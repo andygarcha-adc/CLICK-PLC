@@ -83,8 +83,8 @@
 				    	'event_category': 'Package Search',
 					'event_label': 'Compatibility Check',
 					'package_name': packageName,
-				  	'compatible_version': result.bestMatch,
-					'highest_version': result.highestVersion,	      
+				  	'compatible_version': bestMatch,
+					'highest_version': highestVersion,	      
 			   	 });
 				
 				viewNpmButton.onclick = () => window.open(npmUrl, "_blank");
