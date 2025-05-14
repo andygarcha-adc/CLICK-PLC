@@ -33,6 +33,7 @@
 				allVersions = Object.keys(data.versions);
 			else {
 				throw new Error("Package not found.");
+				document.body.classList.remove('waiting');
 			}
 	                let bestMatch = null;
 			const highestVersion = allVersions[allVersions.length - 1]; // <-- this gets the highest version
