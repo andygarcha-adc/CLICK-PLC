@@ -4,7 +4,7 @@
   "description": "Node Red MQTT broker node based on aedes.js",
   "dependencies": {
     "aedes": "^0.49.0",
-    "aedes-persistence-mongodb": "^9.1.1",
+    "aedes-persistence-mongodb": "9.1.1",
     "aedes-persistence-level": "^8.0.1",
     "level": "^8.0.0",
     "websocket-stream": "^5.5.2"
@@ -27,34 +27,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martin-doyle/node-red-contrib-aedes.git"
+    "url": "git+https://github.com/AutomationDirect/CLICK-PLC/tree/main/Node-RED/node-red-c2nred-mqtt.git"
   },
   "keywords": [
     "node-red",
     "aedes",
-    "mqtt"
+    "mqtt",
+    "click",
+    "c2-nred"
   ],
   "author": {
-    "name": "Martin Doyle",
-    "email": "martin-doyle@online.de"
+    "name": "Trevis Walker",
+    "email": "twalker@automationdirect.com"
   },
-  "contributors": [
-    {
-      "name": "zuhito",
-      "email": "zuhito@hotmail.co.jp"
-    },
-    {
-      "name": "Jochen Scheib",
-      "email": "webmaster@mapero.de"
-    },
-    {
-      "name": "Ori Novanda",
-      "email": "cargmax@gmail.com"
-    }
-  ],
+  
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/martin-doyle/node-red-contrib-aedes/issues"
+    "url": "https://github.com/AutomationDirect/CLICK-PLC/tree/main/Node-RED/node-red-c2nred-mqtt/issues"
   },
-  "homepage": "https://github.com/martin-doyle/node-red-contrib-aedes#readme"
+  "homepage": "https://github.com/AutomationDirect/CLICK-PLC/tree/main/Node-RED/node-red-c2nred-mqtt#readme"
 }
