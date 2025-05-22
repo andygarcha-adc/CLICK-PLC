@@ -1,4 +1,4 @@
-# node-red-contrib-aedes
+# node-red-c2nred-mqtt
 MQTT Broker for CLICK C2-NRED Node-RED modules based on [node-red-contrib-aedes](https://github.com/martin-doyle/node-red-contrib-aedes) which is based on [Aedes](https://github.com/moscajs/aedes).
 
 You can use the MQTT protocol in Node-RED without an external MQTT broker like Mosquitto.
