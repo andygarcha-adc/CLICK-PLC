@@ -25,6 +25,7 @@ Just put this node on Node-RED and hit the deploy button. The MQTT Broker will r
 ![flows](./flows.png)
 
 ## Features
+- Workd with AutomationDirect.com CLICK C2-NRED module
 - Standard TCP Support
 - WebSocket Support via port or path
 - SSL / TLS
