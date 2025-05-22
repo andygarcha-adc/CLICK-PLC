@@ -1,5 +1,5 @@
 {
-  "name": "node-red-click-c2nred-mqtt",
+  "name": "node-red-contrib-c2nred-mqtt",
   "version": "0.1.0",
   "description": "Node Red MQTT broker node based on aedes.js for CLICK C2-NRED module",
   "dependencies": {
