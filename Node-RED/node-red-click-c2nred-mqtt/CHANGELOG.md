@@ -1,4 +1,4 @@
-# node-red-click-c2nred-mqtt Changelog
+# node-red-contrib-c2nred-mqtt Changelog
 
 ## May 22, 2025, Initial commit
 
