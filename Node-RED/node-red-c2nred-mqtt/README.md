@@ -11,7 +11,9 @@ You can use the MQTT protocol in Node-RED without an external MQTT broker like M
 [![devDependency Status](https://david-dm.org/martin-doyle/node-red-contrib-aedes/dev-status.svg)](https://david-dm.org/martin-doyle/node-red-contrib-aedes#info=devDependencies)
 -->
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+<!--
 [![NPM version](https://img.shields.io/npm/v/node-red-contrib-aedes.svg?style=flat)](https://www.npmjs.com/node-red-contrib-aedes)
+-->
 
 ## Background
 This node was created because the node-red-contrib-aedes MQTT Broker had a dependency of a dependency that did not work for the C2-NRED module [node-red-contrib-aedes] (https://github.com/martin-doyle/node-red-contrib-aedes)
