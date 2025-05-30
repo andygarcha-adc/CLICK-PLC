@@ -171,27 +171,27 @@
     
           gtag('config', 'G-C5JPBW1KYE', { 'debug_mode':true });
         
-	document.addEventListener('DOMContentLoaded', () => {
-	  document.querySelectorAll('.static-link').forEach(link => {
-	    link.addEventListener('click', () => {
-	      const href = link.getAttribute('href');
-	
-	      // Extract just the package name from the URL
-	      const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
-	      if (match) {
-	        const packageName = match[1];
-	
-	        // Fire a gtag event
-	        if (typeof gtag === 'function') {
-	          gtag('event', 'download_click', {
-	            event_category: 'Static Package Table',
-	            event_label: packageName
-	          });
-	        }
-	      }
-	    });
-	  });
-	});
+		document.addEventListener('DOMContentLoaded', () => {
+		  document.querySelectorAll('.static-link').forEach(link => {
+		    link.addEventListener('click', () => {
+		      const href = link.getAttribute('href');
+		
+		      // Extract just the package name from the URL
+		      const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
+		      if (match) {
+		        const packageName = match[1];
+		
+		        // Fire a gtag event
+		        if (typeof gtag === 'function') {
+		          gtag('event', 'download_click', {
+		            event_category: 'Static Package Table',
+		            event_label: packageName
+		          });
+		        }
+		      }
+		    });
+		  });
+		});
 	</script>
         <script src="script.js"></script> <!-- External JS -->
     <footer style="text-align: center; padding: 3px; font-size: 0.9em; color: #777;">
