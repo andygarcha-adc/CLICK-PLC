@@ -183,7 +183,7 @@
 		      const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
 		      if (match) {
 		        const packageName = match[1];
-		
+		      console.log("Tracking download for:", packageName);
 		        // Fire a gtag event
 		        if (typeof gtag === 'function') {
 		          gtag('event', 'download_click', {
