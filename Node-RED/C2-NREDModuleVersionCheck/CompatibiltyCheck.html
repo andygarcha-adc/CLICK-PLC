@@ -125,24 +125,7 @@
         	<p>For more information about the C2-NRED CLICK module please visit <a href="https://www.automationdirect.com/adc/overview/catalog/programmable_controllers/click_plus_plcs_(stackable_micro_modular)/cpu_option_slot_modules" target="_blank">AutomationDirect.com</a></p>
 		<p>For more information about Node-RED in general please visit <a href="https://nodered.org/" target="_blank">NodeRED.org</a></p>
 		<p class="note"><strong>NOTE:</strong> This is only an aid to find the correct version. ADC does not support or warrant any third-party nodes.</p>
-        <!-- Google tag (gtag.js) -->
-        <script src="https://www.googletagmanager.com/gtag/js?id=G-C5JPBW1KYE"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-    
-          gtag('config', 'G-C5JPBW1KYE', { 'debug_mode':true });
-        </script>
-        <script src="script.js"></script> <!-- External JS -->
-    </div>
-	<!-- <div class="container">
-		<h2>Frequently Searched Packages</h2>
-		<p>C2-NRED MQTT Broker <a href="https://registry.npmjs.org/node-red-contrib-c2nred-mqtt/-/node-red-contrib-c2nred-mqtt-0.1.0.tgz" target="_blank">Download Link</a></p>
-		<p>node-red-contrib-modbus <a href="https://registry.npmjs.org/node-red-contrib-modbus/-/node-red-contrib-modbus-5.31.0.tgz" target="_blank">Download Link</a></p>
-		<p>node-red-node-email <a href="https://registry.npmjs.org/node-red-node-email/-/node-red-node-email-2.2.1.tgz" target="_blank">Download Link</a></p>
-		<p>node-red-node-sqlite <a href="https://registry.npmjs.org/node-red-node-sqlite/-/node-red-node-sqlite-1.1.0.tgz" target="_blank">Download Link</a></p>
-	</div> -->
+            </div>
 	<div class="container">	
 		<h2>Frequently Searched Packages</h2>
 		<table>
@@ -154,30 +137,63 @@
 			<tr>
 				<td>node-red-contrib-c2nred-mqtt</td>
 				<td>MQTT Broker for CLICK C2-NRED Node-RED modules</td>
-				<td><a href="https://registry.npmjs.org/node-red-contrib-c2nred-mqtt/-/node-red-contrib-c2nred-mqtt-0.1.0.tgz" target="_blank">Download Link</a></td>
+				<td><a href="https://registry.npmjs.org/node-red-contrib-c2nred-mqtt/-/node-red-contrib-c2nred-mqtt-0.1.0.tgz" class="static-link" target="_blank">Download Link</a></td>
 			</tr>
 			<tr>
 				<td>node-red-contrib-modbus</td>
 				<td>The all-in-one Modbus TCP and Serial contribution package for Node-RED</td>
-				<td><a href="https://registry.npmjs.org/node-red-contrib-modbus/-/node-red-contrib-modbus-5.31.0.tgz" target="_blank">Download Link</a></td>
+				<td><a href="https://registry.npmjs.org/node-red-contrib-modbus/-/node-red-contrib-modbus-5.31.0.tgz" class="static-link" target="_blank">Download Link</a></td>
 			</tr>
 			<tr>
 				<td>node-red-node-email</td>
 				<td>Node-RED nodes to send and receive simple emails.</td>
-				<td><a href="https://registry.npmjs.org/node-red-node-email/-/node-red-node-email-2.2.1.tgz" target="_blank">Download Link</a></td>
+				<td><a href="https://registry.npmjs.org/node-red-node-email/-/node-red-node-email-2.2.1.tgz" class="static-link" target="_blank">Download Link</a></td>
 			</tr>
 			<tr>
 				<td>node-red-contrib-fs-ops</td>
 				<td>A Node Red node for performing file system operations.</td>
-				<td><a href="https://registry.npmjs.org/node-red-contrib-fs-ops/-/node-red-contrib-fs-ops-1.6.0.tgz" target="_blank">Download Link</a></td>
+				<td><a href="https://registry.npmjs.org/node-red-contrib-fs-ops/-/node-red-contrib-fs-ops-1.6.0.tgz" class="static-link" target="_blank">Download Link</a></td>
 			</tr>
 			<tr>
 				<td> node-red-contrib-murr-impact67pro-iolink-api</td>
 				<td>A collection of various nodes which can be used as a Free example with the Murr IMPACT67 Pro module from Murr Electronic.</td>
-				<td><a href="https://registry.npmjs.org/node-red-contrib-murr-impact67pro-iolink-api/-/node-red-contrib-murr-impact67pro-iolink-api-1.1.25.tgz" target="_blank">Download Link</a></td>
+				<td><a href="https://registry.npmjs.org/node-red-contrib-murr-impact67pro-iolink-api/-/node-red-contrib-murr-impact67pro-iolink-api-1.1.25.tgz" class="static-link" target="_blank">Download Link</a></td>
 			</tr>
 		</table>
 	</div>
+	    
+	<!-- Google tag (gtag.js) -->
+        <script src="https://www.googletagmanager.com/gtag/js?id=G-C5JPBW1KYE"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+    
+          gtag('config', 'G-C5JPBW1KYE', { 'debug_mode':true });
+        
+	document.addEventListener('DOMContentLoaded', () => {
+	  document.querySelectorAll('.static-link').forEach(link => {
+	    link.addEventListener('click', () => {
+	      const href = link.getAttribute('href');
+	
+	      // Extract just the package name from the URL
+	      const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
+	      if (match) {
+	        const packageName = match[1];
+	
+	        // Fire a gtag event
+	        if (typeof gtag === 'function') {
+	          gtag('event', 'download_click', {
+	            event_category: 'Static Package Table',
+	            event_label: packageName
+	          });
+	        }
+	      }
+	    });
+	  });
+	});
+	</script>
+        <script src="script.js"></script> <!-- External JS -->
     <footer style="text-align: center; padding: 3px; font-size: 0.9em; color: #777;">
       Version 1.3.0
     </footer>
