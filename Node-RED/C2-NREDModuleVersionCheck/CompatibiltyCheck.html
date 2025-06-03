@@ -182,14 +182,14 @@
 		      // Extract just the package name from the URL
 		      const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
 		      if (match) {
-		        const packageName = match[1];
-		      console.log("Tracking download for:", packageName);
+		        const package = match[1];
+		      console.log("Tracking download for:", package);
 		        // Fire a gtag event
 		        if (typeof gtag === 'function') {
-		          console.log("Logged download for:", packageName);
+		          console.log("Logged download for:", package);
 			  gtag('event', 'download_click', {
 		            event_category: 'Static Package Table',
-		            event_label: packageName
+		            event_label: package
 			    
 		          });
 		        }
