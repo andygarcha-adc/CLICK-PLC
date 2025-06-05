@@ -167,40 +167,41 @@
 	    
 	<!-- Google tag (gtag.js) -->
         <script src="https://www.googletagmanager.com/gtag/js?id=G-C5JPBW1KYE"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-    
-          gtag('config', 'G-C5JPBW1KYE', { 'debug_mode':true });
+	<script>
+    		window.dataLayer = window.dataLayer || [];
+    		function gtag(){dataLayer.push(arguments);}
+   		gtag('js', new Date());
+    		gtag('config', 'G-C5JPBW1KYE', { 'debug_mode':true });
         
 		document.addEventListener('DOMContentLoaded', () => {
-		  document.querySelectorAll('.static-link').forEach(link => {
-		    link.addEventListener('click', () => {
-		      const href = link.getAttribute('href');
+			document.querySelectorAll('.static-link').forEach(link => {
+				link.addEventListener('click', () => {
+					const href = link.getAttribute('href');
 		
-		      // Extract just the package name from the URL
-		      const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
-		      if (match) {
-		        const package = match[1];
-		      console.log("Tracking download for:", package);
-		        // Fire a gtag event
-		        if (typeof gtag === 'function') {
-		          console.log("Logged download for:", package);
-			  gtag('event', 'download_click', {
-		            event_category: 'Static Package Table',
-		            event_label: 'Download Package',
-			    package: package,
-		          });
-		        }
-		      }
-		    });
-		  });
-		});
+					// Extract just the package name from the URL
+					const match = href.match(/\/([^/]+)-\d+\.\d+\.\d+\.tgz$/);
+					if (match) {
+						const pkg = match[1];
+						console.log("Tracking download for:", pkg);
+						
+						// Fire a gtag event
+						if (typeof gtag === 'function') {
+							console.log("Logged download for:", pkg);
+							gtag('event', 'download_click', {
+								event_category: 'Static Package Table',
+								event_label: 'Download Package',
+								package: pkg,
+								link: href,
+						});
+					}
+				}
+			});
+		}
+	});
 	</script>
         <script src="script.js"></script> <!-- External JS -->
     <footer style="text-align: center; padding: 3px; font-size: 0.9em; color: #777;">
-      Version 1.3.3
+      Version 1.3.4
     </footer>
 </body>
 </html>
