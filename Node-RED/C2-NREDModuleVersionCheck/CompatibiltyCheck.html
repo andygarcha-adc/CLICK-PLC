@@ -185,14 +185,14 @@
 						console.log("Tracking download for:", pkg);
 						
 						// Fire a gtag event
-						if (typeof gtag === 'function') {
+						/*if (typeof gtag === 'function') {
 							console.log("Logged download for:", pkg);
 							gtag('event', 'download_click', {
 								event_category: 'Static Package Table',
 								event_label: 'Download Package',
 								package: pkg,
 								link: href,
-						});
+						});*/
 					}
 				}
 			});
