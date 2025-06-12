@@ -173,7 +173,7 @@
    		gtag('js', new Date());
     		gtag('config', 'G-C5JPBW1KYE', { 'debug_mode':true });
         
-		document.addEventListener('DOMContentLoaded', () => {
+		/*document.addEventListener('DOMContentLoaded', () => {
 			document.querySelectorAll('.static-link').forEach(link => {
 				link.addEventListener('click', () => {
 					const href = link.getAttribute('href');
@@ -185,19 +185,19 @@
 						console.log("Tracking download for:", pkg);
 						
 						// Fire a gtag event
-						/*if (typeof gtag === 'function') {
+						if (typeof gtag === 'function') {
 							console.log("Logged download for:", pkg);
 							gtag('event', 'download_click', {
 								event_category: 'Static Package Table',
 								event_label: 'Download Package',
 								package: pkg,
 								link: href,
-						});*/
+						});
 					}
 				}
 			});
 		}
-	});
+	});*/
 	</script>
         <script src="script.js"></script> <!-- External JS -->
     <footer style="text-align: center; padding: 3px; font-size: 0.9em; color: #777;">
