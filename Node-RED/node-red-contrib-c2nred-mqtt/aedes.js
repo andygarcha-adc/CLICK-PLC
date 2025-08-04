@@ -387,7 +387,7 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType('aedes broker', AedesBrokerNode, {
+  RED.nodes.registerType('c2nred broker', AedesBrokerNode, {
     credentials: {
       username: { type: 'text' },
       password: { type: 'password' },
