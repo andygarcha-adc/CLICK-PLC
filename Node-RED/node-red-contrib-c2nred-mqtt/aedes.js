@@ -232,7 +232,7 @@ module.exports = function (RED) {
       node.status({
         fill: 'green',
         shape: 'dot',
-        text: RED._('aedes-mqtt-broker.status.connected', { count: broker.connectedClients })
+        text: RED._('c2nred-mqtt-broker.status.connected', { count: broker.connectedClients })
       });
       node.send([msg, null]);
     });
@@ -248,7 +248,7 @@ module.exports = function (RED) {
       node.status({
         fill: 'green',
         shape: 'dot',
-        text: RED._('aedes-mqtt-broker.status.connected', { count: broker.connectedClients })
+        text: RED._('c2nred-mqtt-broker.status.connected', { count: broker.connectedClients })
       });
     });
 
@@ -264,7 +264,7 @@ module.exports = function (RED) {
       node.status({
         fill: 'green',
         shape: 'dot',
-        text: RED._('aedes-mqtt-broker.status.connected', { count: broker.connectedClients })
+        text: RED._('c2nred-mqtt-broker.status.connected', { count: broker.connectedClients })
       });
     });
 
@@ -280,7 +280,7 @@ module.exports = function (RED) {
       node.status({
         fill: 'green',
         shape: 'dot',
-        text: RED._('aedes-mqtt-broker.status.connected', { count: broker.connectedClients })
+        text: RED._('c2nred-mqtt-broker.status.connected', { count: broker.connectedClients })
       });
     });
 
@@ -295,7 +295,7 @@ module.exports = function (RED) {
       node.status({
         fill: 'green',
         shape: 'dot',
-        text: RED._('aedes-mqtt-broker.status.connected', { count: broker.connectedClients })
+        text: RED._('c2nred-mqtt-broker.status.connected', { count: broker.connectedClients })
       });
     });
 
