@@ -387,7 +387,7 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType('mqtt broker', AedesBrokerNode, {
+  RED.nodes.registerType('aedes broker', AedesBrokerNode, {
     credentials: {
       username: { type: 'text' },
       password: { type: 'password' },
