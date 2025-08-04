@@ -1,13 +1,15 @@
 {
   "name": "node-red-contrib-c2nred-mqtt",
-  "version": "0.1.0",
+  "version": "0.1.31",
   "description": "Node Red MQTT broker node based on aedes.js for CLICK C2-NRED module",
   "dependencies": {
     "aedes": "^0.49.0",
-    "aedes-persistence-mongodb": "9.1.1",
+    "aedes-packet": "^3.0.0",
     "aedes-persistence-level": "^8.0.1",
-    "level": "^8.0.0",
-    "websocket-stream": "^5.5.2"
+    "aedes-persistence-mongodb": "9.1.1",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "websocket-stream": "^5.3.0"
   },
   "devDependencies": {
     "mqtt": "^4.3.7",
@@ -34,10 +36,14 @@
     "aedes",
     "mqtt"
   ],
-  "author": "Trevis Walker <twalker@automationdirect.com>",
+  "author": "Andrew Garcha <agarcha@automationdirect.com>",
+  "contributors": [
+    "Trevis Walker <twalker@automationdirect.com>",
+    "Andrew Garcha <agarcha@automationdirect.com>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AutomationDirect/CLICK-PLC/blob/main/Node-RED/node-red-contrib-c2nred-mqtt//issues"
+    "url": "https://github.com/AutomationDirect/CLICK-PLC/blob/main/Node-RED/node-red-contrib-c2nred-mqtt/issues"
   },
   "homepage": "https://github.com/AutomationDirect/CLICK-PLC/blob/main/Node-RED/node-red-contrib-c2nred-mqtt/#readme",
   "main": "aedes.js",
