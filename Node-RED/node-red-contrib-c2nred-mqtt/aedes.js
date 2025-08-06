@@ -97,7 +97,6 @@ module.exports = function (RED) {
       })
     */
     } else if (config.persistence_bind === 'json') {
-      console.log(config)
       aedesSettings.persistence = SQLitePersistence();
       node.log('Start persistence to SQLite');
     }

@@ -1,6 +1,6 @@
 # node-red-contrib-c2nred-mqtt
 MQTT Broker for CLICK C2-NRED Node-RED modules based on [node-red-contrib-aedes](https://github.com/martin-doyle/node-red-contrib-aedes) which is based on [Aedes](https://github.com/moscajs/aedes).
-PLEASE FIX ME! I DO NOT HAVE GITHUB LINK YET
+**PLEASE FIX ME! I DO NOT HAVE GITHUB LINK YET**
 
 You can use the MQTT protocol in Node-RED without an external MQTT broker like Mosquitto.
 
@@ -23,7 +23,7 @@ You can install the node directly within the editor by using the [Palette Manage
 
 ## Flows
 Just put this node on Node-RED and hit the deploy button. The MQTT Broker will run on your Node-RED instance.
-![flows](./flows.png)
+![flows](./readme_files/flows.png)
 
 ## Features
 - Works with AutomationDirect.com CLICK C2-NRED module

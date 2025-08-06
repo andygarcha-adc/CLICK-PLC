@@ -4,7 +4,7 @@ All notable changes to this project will be doucmented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0).
 
-## [Unreleased]
+## v0.1.44, 08 August 2025
 
 ### Added
 - Support for Memory + SQLite backing
