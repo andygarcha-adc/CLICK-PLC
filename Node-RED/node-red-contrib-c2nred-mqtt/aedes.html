@@ -322,4 +322,18 @@
       $('#node-input-key').val('');
     }
   });
+  // handle migrations
+  RED.nodes.registerType('aedes broker', {
+    deprecated: true
+  })
+  RED.nodes.registerMigration('aedes broker', [
+    {
+      version: '0.1.29', // if we reach this version (or later), check the migration rules
+      re: function (node) {
+        // update the type to the NEW name
+        node.type = 'c2nred broker';
+        return node;
+      }
+    }
+  ]);
 </script>
